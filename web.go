@@ -18,7 +18,7 @@ type APIGet struct {
 func (self *WebApp) Get(w rest.ResponseWriter, req *rest.Request) {
     out := APIGet{}
     out.Test = "test"
-    
+
     w.WriteJson(out)
 }
 
