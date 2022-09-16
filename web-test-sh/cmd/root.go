@@ -1,8 +1,13 @@
-package main
+package cmd
 
 import (
     "github.com/ant0ine/go-json-rest/rest"
 )
+
+type Options struct {
+    HttpDevel       bool        `long:"http-devel" description:"Use development mode"`
+    HttpListen      string      `long:"http-listen" value-name:"HOST:PORT" default:":8282"`
+}
 
 type WebApp struct {
 }
@@ -29,3 +34,4 @@ func RestApp() (rest.App, error) {
         rest.Get("/",           app.Get),
     )
 }
+    
